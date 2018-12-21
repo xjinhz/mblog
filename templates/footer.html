@@ -1,0 +1,9 @@
+{% block footer %}
+    {% if now %}
+        <p style="font-family: 微软雅黑;">现在时刻：{{ now }}</p>
+    {% else %}
+        <p style="font-family: 微软雅黑;font-size: 8pt;">文本内容取自网络，如有侵权请来信通知下架</p>
+        <p style="font-family: 微软雅黑;font-size: 8pt;">联系邮箱:xjinhz@126.com</p>
+    {% endif %}
+
+{% endblock %}
