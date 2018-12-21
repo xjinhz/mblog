@@ -1,0 +1,19 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+venv/
+*.pyc
+venv/bin/activate
+venv/bin/activate.csh
+venv/bin/activate.fish
+venv/bin/python
+venv/bin/python3
+venv/bin/python3.7
+venv/include/
+venv/pyvenv.cfg
