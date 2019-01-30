@@ -1,12 +1,32 @@
 {% extends 'base.html' %}
+{% load markdown_deux_tags %}
 {% block title %} My Blog {% endblock %}
 {% block headmessage %}
     <h3 style="font-family: 楷体;">本站文章列表</h3>
 {% endblock %}
 {% block content %}
     {% for post in posts %}
-        <p style="font-family: 微软雅黑;font-size: 14pt;font-weight: bold;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p style="font-family: 微软雅黑;font-size:14pt;font-weight:bold;">
+                    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+                </p>
+            </div>
+            <div class="panel-body" style="backgroud-color:#ffffdd">
+                <p>
+                    <!-- 复合条件过滤 -->
+                    {{ post.body | markdown| truncatechars:40 }}
+                </p>
+            </div>
+            <div class="panel-footer" style="background-color: #efefef">
+                <p>
+                    发布时间：{{ post.pub_date | date:"Y M D" }}
+                </p>
+            </div>
+        </div>
+        <br>
+        {% comment %}<p style="font-family: 微软雅黑;font-size: 14pt;font-weight: bold;">
             <a href="/post/{{ post.slug }}">{{ post.title }}</a>
-        </p>
+        </p>{% endcomment %}
     {% endfor %}
 {% endblock %}
